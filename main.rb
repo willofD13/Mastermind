@@ -3,10 +3,10 @@ colors = %w[red blue yellow green black white]
 codemaker = []
 colors.shuffle.each do |item|
   break if codemaker.length == 4
-
   codemaker.push(item)
 end
 
+puts "Enter your pattern"
 gets.chomp.split(',')
 
 def existence(codebreaker, codemaker)
@@ -16,6 +16,7 @@ def existence(codebreaker, codemaker)
     p "#{codebreaker[i]} exists" if codemaker.include?(codebreaker[i]) == true
     i += 1
   end
+  position(codebreaker,codemaker)
 end
 
 def position(codebreaker, codemaker)
@@ -26,3 +27,5 @@ def position(codebreaker, codemaker)
     i += 1
   end
 end
+
+existence(codebreaker,codemaker)
