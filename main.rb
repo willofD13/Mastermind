@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'pry-byebug'
+##require 'pry-byebug'
 class Game
   
   @@colors = ['red','blue','yellow','green','black','white']
@@ -17,13 +17,13 @@ class Game
       break if codemaker.length == 4
       codemaker.push(item)
     end
+    p codemaker
     breaker_pattern(codebreaker)
   end
   
   def breaker_pattern (codebreaker)
     puts 'Enter your pattern'
     codebreaker = gets.chomp.split(',')
-    p codebreaker
     existence(codebreaker,codemaker)
   end
     
@@ -35,9 +35,6 @@ class Game
       p "#{codebreaker[i]} exists" if codemaker.include?(codebreaker[i]) == true
       i += 1
     end
-    
-    binding.pry
-
     position(codebreaker, codemaker)
   end
 
@@ -49,7 +46,14 @@ class Game
       i += 1
     end
   end
+
+  def play
+    while @@turn <=12
+      maker_pattern
+      @@turn += 1
+    end
+  end
 end
 
 game = Game.new
-game.maker_pattern
+game.play
