@@ -18,7 +18,6 @@ class Game
       codemaker.push(item)
     end
     p codemaker
-    breaker_pattern(codebreaker)
   end
   
   def breaker_pattern (codebreaker)
@@ -48,8 +47,9 @@ class Game
   end
 
   def play
+    maker_pattern
     while @@turn <=12
-      maker_pattern
+      breaker_pattern(codebreaker)
       @@turn += 1
     end
   end
