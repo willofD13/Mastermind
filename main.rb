@@ -4,6 +4,8 @@ class Game
   
   @@turn = 1
 
+  attr_reader :colors
+
   def initialize
     @colors = ['red','blue','yellow','green','black','white']
   end
