@@ -41,7 +41,13 @@ class Game
     i = 0
     while i < 4
       codebreaker[i].eql?(codemaker[i])
-      p "#{codebreaker[i]} is in the right position" if codebreaker[i].eql?(codemaker[i]) == true
+        if codebreaker == codemaker
+          puts "You found the pattern!"
+          @@turn = 13
+          break;
+        elsif codebreaker[i].eql?(codemaker[i]) == true
+          puts "#{codebreaker[i]} is in the right position"
+        end
       i += 1
     end
   end
