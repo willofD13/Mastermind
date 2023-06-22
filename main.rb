@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Game
-  colors = ['red','blue','yellow','green','black','white']
+  @@colors = ['red','blue','yellow','green','black','white']
 
   codemaker = []
   colors.shuffle.each do |item|
