@@ -2,6 +2,7 @@
 
 class Game
   @@colors = ['red','blue','yellow','green','black','white']
+  @@turn = 1
 
   codemaker = []
   colors.shuffle.each do |item|
