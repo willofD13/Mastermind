@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require 'pry-byebug'
 class Game
   
   @@colors = ['red','blue','yellow','green','black','white']
@@ -16,11 +16,11 @@ class Game
     @@colors.shuffle.each do |item|
       break if codemaker.length == 4
       codemaker.push(item)
-      breaker_pattern
     end
+    breaker_pattern(codebreaker)
   end
   
-  def breaker_pattern 
+  def breaker_pattern (codebreaker)
     puts 'Enter your pattern'
     codebreaker = gets.chomp.split(',')
     p codebreaker
@@ -35,6 +35,9 @@ class Game
       p "#{codebreaker[i]} exists" if codemaker.include?(codebreaker[i]) == true
       i += 1
     end
+    
+    binding.pry
+
     position(codebreaker, codemaker)
   end
 
