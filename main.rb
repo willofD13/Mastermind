@@ -7,7 +7,7 @@ colors.shuffle.each do |item|
 end
 
 puts "Enter your pattern"
-gets.chomp.split(',')
+codebreaker = gets.chomp.split(',')
 
 def existence(codebreaker, codemaker)
   i = 0
