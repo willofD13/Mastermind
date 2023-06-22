@@ -5,3 +5,5 @@ colors.shuffle.each do |item|
   break if codemaker.length == 4
   codemaker.push(item)
 end
+
+codebreaker = gets.chomp.split(',')
