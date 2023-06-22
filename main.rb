@@ -22,7 +22,7 @@ class Game
   end
   
   def breaker_pattern (codebreaker)
-    puts 'Enter your pattern'
+    puts 'Enter your pattern. Please separate your color choices with comma(,)'
     codebreaker = gets.chomp.split(',')
     existence(codebreaker,codemaker)
   end
