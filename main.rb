@@ -17,3 +17,12 @@ def existence(codebreaker, codemaker)
     i += 1
   end
 end
+
+def position(codebreaker, codemaker)
+  i = 0
+  while i < 4
+    codebreaker[i].eql?(codemaker[i])
+    p "#{codeguess[i]} is in the right position" if codebreaker[i].eql?(codemaker[i]) == true
+    i += 1
+  end
+end
