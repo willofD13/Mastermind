@@ -22,6 +22,7 @@ class Game
           @@turn += 1
         end
       end
+    elsif choice == 'codemaker'
   end
 
   def maker_pattern
