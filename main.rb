@@ -11,6 +11,18 @@ class Game
     @codebreaker = []
     @codemaker = []
   end
+  
+  def ask_user
+    puts "Do you want to be the codemaker or the codebreaker?"
+    choice = gets.chomp
+      if choice == 'codebreaker'
+        maker_pattern
+        while @@turn <=12
+          breaker_pattern(codebreaker)
+          @@turn += 1
+        end
+      end
+  end
 
   def maker_pattern
     @@colors.shuffle.each do |item|
@@ -53,11 +65,7 @@ class Game
   end
 
   def play
-    maker_pattern
-    while @@turn <=12
-      breaker_pattern(codebreaker)
-      @@turn += 1
-    end
+    ask_user
   end
 end
 
