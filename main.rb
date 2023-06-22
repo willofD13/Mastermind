@@ -12,11 +12,10 @@ class Game
     @codemaker = []
   end
 
-  codemaker = []
-  colors.shuffle.each do |item|
-    break if codemaker.length == 4
-
-    codemaker.push(item)
+  def code_maker
+    @@colors.shuffle.each do |item|
+      break if codemaker.length == 4
+      codemaker.push(item)
   end
 
   puts 'Enter your pattern'
