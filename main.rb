@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
 class Game
-  @@colors = ['red','blue','yellow','green','black','white']
+  
   @@turn = 1
+
+  def initialize
+    @colors = ['red','blue','yellow','green','black','white']
+  end
 
   codemaker = []
   colors.shuffle.each do |item|
