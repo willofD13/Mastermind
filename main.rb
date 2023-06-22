@@ -5,7 +5,7 @@ class Game
   @@colors = ['red','blue','yellow','green','black','white']
   @@turn = 1
 
-  attr_reader :colors
+  attr_reader :codemaker,:codebreaker
 
   def initialize
     @codebreaker = []
