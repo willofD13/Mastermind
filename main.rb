@@ -12,14 +12,18 @@ class Game
     @codemaker = []
   end
 
-  def code_maker
+  def maker_pattern
     @@colors.shuffle.each do |item|
       break if codemaker.length == 4
       codemaker.push(item)
   end
-
-  puts 'Enter your pattern'
-  gets.chomp.split(',')
+  
+  def breaker_pattern 
+    puts 'Enter your pattern'
+    codebreaker = gets.chomp.split(',')
+    p codebreaker
+  end
+    
 
   def existence(codebreaker, codemaker)
     i = 0
