@@ -13,7 +13,8 @@ class Game
   end
 
   def ask_user
-    puts 'Do you want to be the codemaker or the codebreaker?'
+    puts 'Do you want to be the codemaker or the codebreaker? 
+    Codebreaker has 12 attempts to break the pattern. Duplicates and blanks are not allowed.'
     choice = gets.chomp
     return unless choice == 'codebreaker'
 
