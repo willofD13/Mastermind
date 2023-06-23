@@ -21,8 +21,8 @@ class Game
           breaker_pattern(codebreaker)
           @@turn += 1
         end
+      elsif choice == 'codemaker'
       end
-    elsif choice == 'codemaker'
   end
 
   def maker_pattern
@@ -41,12 +41,14 @@ class Game
     
 
   def existence(codebreaker, codemaker)
+    num = 0
     i = 0
     while i < 4
       codemaker.include?(codebreaker[i])
-      p "#{codebreaker[i]} exists" if codemaker.include?(codebreaker[i]) == true
+      num += 1 if codemaker.include?(codebreaker[i]) == true
       i += 1
     end
+    p "#{num} colors exist in code pattern"
     position(codebreaker, codemaker)
   end
 
