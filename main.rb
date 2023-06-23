@@ -12,6 +12,13 @@ class Game
     @codemaker = []
   end
 
+
+  def play
+    ask_user
+  end
+
+  private 
+
   def ask_user
     puts 'Do you want to be the codemaker or the codebreaker? 
     Codebreaker has 12 attempts to break the pattern. Duplicates and blanks are not allowed.'
@@ -70,16 +77,13 @@ class Game
       end
       i += 1
     end
-    if y <= 1
+    if y <= 1 
       puts "#{y} is in the right position"
-    elsif y > 1
+    elsif y > 1 
       puts "#{y} are in the right position"
     end
   end
 
-  def play
-    ask_user
-  end
 end
 
 game = Game.new
