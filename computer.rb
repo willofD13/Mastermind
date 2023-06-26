@@ -1,5 +1,5 @@
 class Game
-  @@pool = ['red','blue','black','white','yellow','green'].repeated_permutation(4)
+  @@pool = ['red','blue','black','white','yellow','green'].repeated_permutation(4).to_a
   
   attr_reader :guess,:answer
 
@@ -7,6 +7,10 @@ class Game
     @guess = []
     @answer = []
   end
+
+  def play
+    answer = @@pool.sample
+    calculate_score(['red','red','blue','blue'],answer)
 
   def calculate_score (guess,answer)
     a = []
