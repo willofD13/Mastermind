@@ -6,11 +6,13 @@ class Game
   def initialize
     @guess = []
     @answer = []
+    @all_scores = Hash.new {|g,a| = {}}
   end
 
   def play
     answer = @@pool.sample
     calculate_score(['red','red','blue','blue'],answer)
+  end
 
   def calculate_score (guess,answer)
     a = []
@@ -42,5 +44,13 @@ class Game
     end
     score = "#{white_peg},#{black_peg}"   
     puts score
+  end
+
+  def remove 
+    @@pool.each do |i|
+      calculate_score(i,answer)
 
 end
+
+game = Game.new
+game.play
