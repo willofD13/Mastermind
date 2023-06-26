@@ -48,15 +48,11 @@ class Game
   end
 
   def calculate_score(codebreaker, codemaker)
+    a = []
+    b = []
     white_peg = 0
     black_peg = 0
-    i = 0
-    while i < 4
-      codemaker.include?(codebreaker[i])
-      white_peg += 1 if codemaker.include?(codebreaker[i]) == true
-      i += 1
-    end
-
+    
     i = 0
     while i < 4
       codebreaker[i].eql?(codemaker[i])
@@ -66,9 +62,19 @@ class Game
         break
       elsif codebreaker[i].eql?(codemaker[i]) == true
         black_peg += 1
+      else a.push(codebreaker[i])
+           b.push(codemaker[i])
       end
       i += 1
     end
+
+    i = 0
+    while i < 4
+      b.include?(a[i])
+      white_peg += 1 if b.include?(a[i]) == true
+      i += 1
+    end
+
     puts "#{white_peg},#{black_peg}"
   end
 
