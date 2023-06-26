@@ -23,13 +23,14 @@ class Game
     puts 'Do you want to be the codemaker or the codebreaker? 
     Codebreaker has 12 attempts to break the pattern. Duplicates and blanks are not allowed.'
     choice = gets.chomp
-    return unless choice == 'codebreaker'
-
-    maker_pattern
-    while @@turn <= 12
-      breaker_pattern(codebreaker)
-      @@turn += 1
-    end
+    
+    if choice == 'codebreaker'
+      maker_pattern
+      while @@turn <= 12
+        breaker_pattern(codebreaker)
+        @@turn += 1
+      end
+    elsif choice == 'codemaker'
   end
 
   def maker_pattern
@@ -52,6 +53,7 @@ class Game
     b = []
     white_peg = 0
     black_peg = 0
+    score = 0
     
     i = 0
     while i < 4
@@ -74,9 +76,11 @@ class Game
       white_peg += 1 if b.include?(a[i]) == true
       i += 1
     end
-
-    puts "#{white_peg},#{black_peg}"
+    score = "#{white_peg},#{black_peg}"   
+    puts score
   end
+
+  def remove 
 
 end
 
