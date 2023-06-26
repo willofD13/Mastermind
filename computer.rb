@@ -6,7 +6,7 @@ class Game
   def initialize
     @guess = []
     @answer = []
-    @all_scores = Hash.new {|g,a| = {}}
+    @all_scores = Hash.new {|g,a| g[a] = {}}
   end
 
   def play
@@ -46,9 +46,11 @@ class Game
     puts score
   end
 
-  def remove 
+  def store
     @@pool.each do |i|
-      calculate_score(i,answer)
+      @all_scores = calculate_score(i,answer)
+    end
+  end
 
 end
 
