@@ -70,11 +70,13 @@ class Game
       i += 1
     end
 
-    i = 0
-    while i < 4
-      b.include?(a[i])
-      white_peg += 1 if b.include?(a[i]) == true
-      i += 1
+    c = a.zip(b)
+    c.each do |i|
+      i.each do |element|
+        if element[0] == element[1]
+          white_peg += 1
+        end
+      end
     end
     score = "#{white_peg},#{black_peg}"   
     puts score
