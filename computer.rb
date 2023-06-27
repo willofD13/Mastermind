@@ -1,8 +1,9 @@
 require 'pry-byebug'
 class Game
   @@pool = ['red','blue','black','white','yellow','green'].repeated_permutation(4).to_a
+  @@turn = 1
   
-  attr_reader :guess,:answer
+  attr_reader :guess,:answer,:all_scores
 
   def initialize
     @guess = []
@@ -40,10 +41,8 @@ class Game
     
     c = a.zip(b)
     c.each do |i|
-      i.each do |element|
-        if element[0] == element[1]
+      if i[0] == i[1]
           white_peg += 1
-        end
       end
     end
     score = "#{white_peg},#{black_peg}"   
@@ -51,12 +50,15 @@ class Game
   end
 
   def store (first_score,answer)
-    binding.pry
+    
     @@pool.each do |item|
       @all_scores[item] = calculate_score(item,answer)
+     ## binding.pry
     end
     new_pool = @@pool.keep_if { |element| @all_scores[element] == first_score}
-    p new_pool
+    binding.pry
+    return new_pool
+    
   end
 
 end
