@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require_relative 'computer.rb'
 # #require 'pry-byebug'
 class Game
   @@colors = %w[red blue yellow green black white]
