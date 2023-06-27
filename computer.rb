@@ -30,7 +30,9 @@ class Game
     end 
   end
 
-  first_guess = ['red','red','blue','blue']
+  def make_guess
+    if @@turn == 1
+      guess = ['red','red','blue','blue']
  
   
 
