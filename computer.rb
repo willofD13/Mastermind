@@ -21,7 +21,19 @@ class Game
   def create_answer (array)
      array.sample 
   end 
-
+  
+  while @@turn <=12
+    @guess = make_guess
+    if all_answers.include?(guess)
+      @@turn += 1
+      @score = calculate_score(guess,answer)
+      if @score = '0,4'
+        puts 'Pattern found'
+        break
+      end
+    end
+  end 
+  
   def calculate_score (guess,answer)
     a = []
     b = []
