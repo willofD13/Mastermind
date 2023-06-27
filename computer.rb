@@ -8,6 +8,9 @@ class Game
     @guess = []
     @answer = []
     @all_scores = Hash.new {|h,k| h[k] = {}}
+
+    @all_answers.product(@all_answers).each do |guess,answer|
+      @all_scores[guess,answer] = calculate_score(guess,answer)
   end 
   
   def play 
