@@ -72,17 +72,13 @@ class Game
 
     c = a.zip(b)
     c.each do |i|
-      i.each do |element|
-        if element[0] == element[1]
-          white_peg += 1
-        end
+      if i[0] == i[1]
+        white_peg += 1
       end
     end
     score = "#{white_peg},#{black_peg}"   
     puts score
-  end
-
-  def remove 
+  end 
 
 end
 
