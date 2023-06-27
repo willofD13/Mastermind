@@ -6,6 +6,7 @@ class Game
     @all_answers = ['red','blue','black','green','white','yellow'].repeated_permutations(4).to_a
     @guess = []
     @answer = []
+    @all_scores = 
   end 
 
   first_guess = ['red','red','blue','blue']
