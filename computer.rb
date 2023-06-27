@@ -1,4 +1,5 @@
 class Game
+  @@turn = 1
 
   attr_accessor :guess,:answer,:all_answers
 
@@ -8,6 +9,12 @@ class Game
     @answer = []
     @all_scores = Hash.new {|h,k| h[k] = {}}
   end 
+  
+  def play 
+    answer = all_answers.sample
+    @possible_answers = all_answers.dup 
+    @possible_scores = all_scores.dup
+  end
 
   first_guess = ['red','red','blue','blue']
   
