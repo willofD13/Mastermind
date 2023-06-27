@@ -1,8 +1,8 @@
 # frozen_string_literal: true
-#require './computer.rb'
+require './computer.rb'
 # #require 'pry-byebug'
 class Game
-  #include Computer
+  include Computer
   @@colors = %w[red blue yellow green black white]
   @@turn = 1
 
@@ -32,7 +32,7 @@ class Game
         @@turn += 1
       end
     elsif choice == 'codemaker'
-      #Computer.new
+      Computer.new
     end
   end
 
@@ -42,7 +42,6 @@ class Game
 
       codemaker.push(item)
     end
-    p codemaker
   end
 
   def breaker_pattern(codebreaker)
@@ -85,4 +84,5 @@ class Game
 
 end
 
-Game.new.play
+game = Game.new 
+game.play
