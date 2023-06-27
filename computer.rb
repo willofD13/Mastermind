@@ -1,6 +1,6 @@
 #equire 'pry-byebug'
 
-class Computer
+module Computer
   @@turn = 1
 
   attr_accessor :guess,:answer,:all_answers,:all_scores
@@ -68,16 +68,12 @@ class Computer
     if @@turn == 1
       guess = ['red','red','blue','blue']
     elsif @@turn > 1
-      pool = @possible_answers.keep_if {|answer|
+        @possible_answers.keep_if {|answer|
         @possible_scores[guess][answer] == @score
       }
-      puts pool.size
-      guess = pool.sample
 
     end
   end
 
 end
 
-game = Computer.new 
-game.play
