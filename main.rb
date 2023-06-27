@@ -1,7 +1,8 @@
 # frozen_string_literal: true
-require_relative 'computer.rb'
+#require './computer.rb'
 # #require 'pry-byebug'
 class Game
+  #include Computer
   @@colors = %w[red blue yellow green black white]
   @@turn = 1
 
@@ -31,6 +32,8 @@ class Game
         @@turn += 1
       end
     elsif choice == 'codemaker'
+      #Computer.new
+    end
   end
 
   def maker_pattern
@@ -70,9 +73,9 @@ class Game
       i += 1
     end
 
-    c = a.zip(b)
-    c.each do |i|
-      if i[0] == i[1]
+    a.each do |peg|
+      if b.include?(peg)
+        b.delete(peg)
         white_peg += 1
       end
     end
@@ -82,5 +85,4 @@ class Game
 
 end
 
-game = Game.new
-game.play
+Game.new.play
